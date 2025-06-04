@@ -7,13 +7,6 @@ import preenche_estatico
 
 app = init_app()
 
-@app.before_first_request
-def inicializar_banco():
-    if not Escola.query.first():
-        print(">> Populando banco pela primeira vez...")
-        importar_csv()
-        preenche_estatico()
-
 
 @app.route("/escolas")
 def listar_escolas():
