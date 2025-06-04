@@ -1,8 +1,19 @@
 from flask import request, jsonify, url_for
 from database import init_app, db
 from models import Escola
+import importar_csv
+import preenche_estatico
+
 
 app = init_app()
+
+@app.before_first_request
+def inicializar_banco():
+    if not Escola.query.first():
+        print(">> Populando banco pela primeira vez...")
+        importar_csv()
+        preenche_estatico()
+
 
 @app.route("/escolas")
 def listar_escolas():
