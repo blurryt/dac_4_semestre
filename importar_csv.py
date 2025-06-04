@@ -1,9 +1,12 @@
 import csv
-from database import init_app, db
+from app_factory import init_app, db
 from models import Escola, Cidade, Prestadora
 import os
 
 app = init_app()
+
+
+
 
 def carregar_csv():
     with app.app_context():

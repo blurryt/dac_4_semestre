@@ -1,9 +1,6 @@
 from flask import request, jsonify, url_for
-from database import init_app, db
+from app_factory import init_app, db
 from models import Escola
-import importar_csv
-import preenche_estatico
-
 
 app = init_app()
 

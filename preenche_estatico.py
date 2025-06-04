@@ -1,4 +1,4 @@
-from database import init_app, db
+from app_factory import init_app, db
 from models import Cidade, Estado, Prestadora
 import csv
 import os

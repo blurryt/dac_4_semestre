@@ -1,4 +1,4 @@
-from database import db
+from app_factory import db
 from sqlalchemy.orm import relationship
 
 class Estado(db.Model):
