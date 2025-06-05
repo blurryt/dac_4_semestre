@@ -6,7 +6,7 @@ echo ">>> Criando banco de dados (se necessário)"
 pip install -r requirements.txt
 
 echo ">>> Criando tabelas no banco"
-python -c "from app_factory import init, db; app = init(); from models import *; with app.app_context(): db.create_all()"
+python -c "from app_factory import init_app, db; app = init_app(); from models import *; with app.app_context(): db.create_all()"
 
 echo ">>> Preenchendo banco"
 python init_db.py
